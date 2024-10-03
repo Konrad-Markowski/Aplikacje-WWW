@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.menu {
+    background-color: #555;
+    text-align: center;
+    padding: 5px;
+}
+
+.menu table {
+    width: 100%;
+}
+
+.menu td {
+    padding: 0px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 10px;
+    display: inline-block;
+}
+
+.menu a:hover {
+    color: #ff0;
+}
+
+.content {
+    display: flex;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #f4f4f4;
+    width: 25%;
+    padding: 10px;
+}
+
+.main-content {
+    background-color: #fff;
+    width: 50%;
+    padding: 10px;
+}
+
+.main-content > h1{
+    color: black;
+}
+
+.image-left {
+    float: left;
+    margin: 10px;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 36px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.form-container {
+    padding: 20px;
+    background-color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 90%;
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.highlight {
+    background-color: yellow;
+}
