@@ -84,6 +84,16 @@ body {
     text-align: justify;
 }
 
+img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+
 .footer {
     text-align: center;
     padding: 20px;
