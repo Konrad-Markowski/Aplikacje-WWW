@@ -6,7 +6,7 @@
 }
 
 body {
-    background: url('./assets/background.jpg') no-repeat center center fixed;
+    background: url('./assets/other/background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
     line-height: 1.6;
@@ -57,6 +57,14 @@ body {
     font-size: 1.1em;
 }
 
+#oscar-award{
+    height: 200px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block
+}
+
 .main-content img {
     float: left;
     margin-right: 20px;
@@ -83,14 +91,23 @@ body {
 .main-content p {
     text-align: justify;
 }
+.gallery{
+    padding: 5px;
+}
 
-img {
-    width: 100px;
-    height: 150px;
+.gallery img {
+    width: 150px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 12px;
     display: block;
     margin: 0 auto;
+    padding: 5px;
+}
+
+#easter-egg{
+    text-decoration: none;
+    color: black;
 }
 
 
