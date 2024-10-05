@@ -5,7 +5,14 @@
     font-family: 'Arial', sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background: url('./assets/other/background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
@@ -44,7 +51,7 @@ body {
 }
 
 .menu a:hover {
-    color: blueviolet;
+    color: rgba(57, 153, 153);
 }
 
 .main-content {
@@ -55,14 +62,15 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     font-size: 1.1em;
+    flex-grow: 1;
 }
 
-#oscar-award{
+#oscar-award {
     height: 200px;
     width: 150px;
     object-fit: cover;
     border-radius: 12px;
-    display: block
+    display: block;
 }
 
 .main-content img {
@@ -91,7 +99,57 @@ body {
 .main-content p {
     text-align: justify;
 }
-.gallery{
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #399;
+}
+
+.form-container input[type="text"], 
+.form-container input[type="email"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-container textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-container input[type="submit"] {
+    background-color: #399;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #288;
+}
+
+
+.gallery {
     padding: 5px;
 }
 
@@ -105,24 +163,18 @@ body {
     padding: 5px;
 }
 
-#easter-egg{
+#easter-egg {
     text-decoration: none;
     color: black;
 }
-
 
 .footer {
     text-align: center;
     padding: 20px;
     background: #399;
     color: white;
-    margin-top: 30px;
     font-size: 0.9em;
+    width: 100%;
     position: relative;
     bottom: 0;
-    width: 100%;
-}
-
-.footer p {
-    margin: 0;
 }
