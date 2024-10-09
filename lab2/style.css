@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('./assets/other/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    background: rgba(57, 153, 153, 0.85);
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.menu {
+    background-color: rgba(192, 192, 192, 0.9);
+    padding: 10px 0;
+}
+
+.menu > table {
+    border-spacing: 20px;
+    margin: auto;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: rgba(57, 153, 153);
+}
+
+.main-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 1.1em;
+    flex-grow: 1;
+}
+
+#oscar-award {
+    height: 200px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.main-content img {
+    float: left;
+    margin-right: 20px;
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.main-content h1, .main-content h2 {
+    color: #399;
+    margin-bottom: 15px;
+}
+
+.main-content ul {
+    margin-left: 20px;
+    padding-left: 10px;
+    list-style-type: square;
+}
+
+.main-content ul li {
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    text-align: justify;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #399;
+}
+
+.form-container input[type="text"], 
+.form-container input[type="email"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-container textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-container input[type="submit"] {
+    background-color: #399;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #288;
+}
+
+
+.gallery {
+    padding: 5px;
+}
+
+.gallery img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+#easter-egg {
+    text-decoration: none;
+    color: black;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #399;
+    color: white;
+    font-size: 0.9em;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
