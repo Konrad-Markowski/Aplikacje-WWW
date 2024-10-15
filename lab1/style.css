@@ -100,61 +100,6 @@ body {
     text-align: justify;
 }
 
-.sidebar-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding-top: 20px;
-    color: black;
-    transition: left 0.3s ease;
-    z-index: 1000;
-}
-
-.sidebar h2 {
-    color: #000;
-    padding-left: 20px;
-}
-
-.sidebar button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 15px;
-    background-color: #444;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 80%;
-}
-
-.sidebar button:hover {
-    background-color: #666;
-}
-
-.color-picker {
-    margin: 20px;
-}
-
-.header, .footer {
-    transition: background-color 0.5s ease;
-}
-
 .form-container {
     background-color: rgba(255, 255, 255, 0.9);
     max-width: 600px;
@@ -203,6 +148,7 @@ body {
     background-color: #288;
 }
 
+
 .gallery {
     padding: 5px;
 }
@@ -225,7 +171,7 @@ body {
 .footer {
     text-align: center;
     padding: 20px;
-    background: rgba(57, 153, 153, 0.85);
+    background: #399;
     color: white;
     font-size: 0.9em;
     width: 100%;
