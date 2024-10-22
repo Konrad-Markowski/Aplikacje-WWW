@@ -218,6 +218,22 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
+.color-block {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display: inline-block;
+}
+.block1 {
+    background-color: red;
+}
+.block2 {
+    background-color: blue;
+}
+.block3 {
+    background-color: green;
+}
+
 
 #easter-egg {
     text-decoration: none;
