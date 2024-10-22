@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwycięzcy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <button class="sidebar-button" id="sidebarToggle">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <br><br>
+        <h2>Ustawienia koloru</h2>
+        <div class="color-picker">
+            <label for="buttonColor">Kolor:</label><br>
+            <input type="color" id="buttonColor" name="buttonColor" value="#0000ff"><br><br>
+        </div>
+        <button id="resetColor">Przywróć oryginalny kolor</button>
+    </div>
+
+    <div class="header">
+        <h1>Aktorzy nagrodzeni Oscarem</h1>
+    </div>
+
+    <div class="menu">
+        <table>
+            <tr>
+                <td><a href="index.html">Strona główna</a></td>
+                <td><a href="winners.html">Zwycięzcy</a></td>
+                <td><a href="directors.html">Reżyserzy</a></td>
+                <td><a href="history.html">Historia</a></td>
+                <td><a href="contact.html">Kontakt</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="main-content">
+        <h2>Aktorzy nagrodzeni Oscarem</h2>
+        <div>
+            <table class="gallery">
+                <tr>
+                    <td>
+                        <img src="./assets/actors/ledger.jpg" alt="Heath Ledger">
+                        <p>Heath Ledger zdobył Oscara pośmiertnie za swoją rolę Jokera w "Mrocznym Rycerzu" (2008). 
+                            Jego interpretacja tej postaci zyskała status kultowy, a Ledger przeszedł do historii kina jako jeden z najwybitniejszych odtwórców ról antybohaterów. 
+                            Zmarł w młodym wieku, co wstrząsnęło światem filmowym. 
+                            Wcześniej był nominowany do Oscara za film "Tajemnica Brokeback Mountain" (2005), co pokazało jego wszechstronność i talent.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/de-niro.jpg" alt="Robert De Niro">
+                        <p>Robert De Niro jest dwukrotnym laureatem Oscara - za "Ojca Chrzestnego II" (1974) oraz "Wściekły byk" (1980). 
+                            Jest znany ze swojej współpracy z reżyserem Martinem Scorsese, z którym nakręcił wiele ikonicznych filmów, takich jak "Taksówkarz", "Chłopcy z ferajny" czy "Kasyno". 
+                            De Niro zdobył uznanie dzięki swojemu pełnemu zaangażowaniu w każdą rolę, często fizycznie przekształcając się w swoich bohaterów.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/streep.jpeg" alt="Meryl Streep">
+                        <p>Meryl Streep, powszechnie uznawana za jedną z najwybitniejszych aktorek w historii kina, zdobyła Oscara trzykrotnie. 
+                            Jej nagrody to za "Sprawa Kramerów" (1979), "Wybór Zofii" (1982) oraz "Żelazna dama" (2011), gdzie wcieliła się w postać Margaret Thatcher. 
+                            Streep ma rekordową liczbę nominacji do Oscara, co świadczy o jej wszechstronności i niezrównanej umiejętności wcielania się w różnorodne postaci.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/dicaprio.jpg" alt="Leonardo DiCaprio">
+                        <p>Leonardo DiCaprio, po wielu latach oczekiwań i sześciu nominacjach, zdobył swojego pierwszego Oscara za rolę w "Zjawie" (2015). 
+                            Aktor ten zasłynął rolą w "Titanicu" (1997), ale jego kariera ewoluowała w stronę bardziej wymagających ról, takich jak w "Incepcji", "Wilku z Wall Street" czy "Django". 
+                            DiCaprio jest także zaangażowany w działania na rzecz ochrony środowiska.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/pitt.jpg" alt="Brad Pitt">
+                        <p>Brad Pitt otrzymał Oscara za rolę drugoplanową w filmie "Pewnego razu w Hollywood" (2019), gdzie zagrał kaskadera Cliffa Bootha. 
+                            Wcześniej był również producentem filmowym nagrodzonego Oscarem "Zniewolonego" (2013). 
+                            Pitt, znany z ról w takich filmach jak "Podziemny krąg", "Siedem" i "Troja", jest jednym z najbardziej rozpoznawalnych aktorów swojego pokolenia.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/mcconaughey.jpg" alt="Matthew McConaughey">
+                        <p>Matthew McConaughey zdobył Oscara za rolę w "Witaj w klubie" (2013), gdzie zagrał elektryka z Teksasu, który zmaga się z AIDS. 
+                            Aktor przeszedł znaczącą przemianę kariery, porzucając lekkie komedie romantyczne na rzecz poważnych, dramatycznych ról. 
+                            Filmy takie jak "Interstellar" czy serial "Detektyw" umocniły jego pozycję w Hollywood.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/theron.jpg" alt="Charlize Theron">
+                        <p>Charlize Theron otrzymała Oscara za rolę seryjnej morderczyni Aileen Wuornos w filmie "Monster" (2003). 
+                            Aktorka całkowicie zmieniła swój wygląd do tej roli, zdobywając uznanie krytyków. 
+                            Theron stała się jedną z najbardziej wszechstronnych aktorek, pojawiając się w takich filmach jak "Mad Max: Na drodze gniewu" i "Atomic Blonde".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/hanks.jpg" alt="Tom Hanks">
+                        <p>Tom Hanks zdobył dwa Oscary z rzędu – za "Filadelfię" (1993) i "Forrest Gump" (1994). 
+                            Znany jest z odgrywania sympatycznych postaci, które wzbudzają empatię u widzów. Inne znaczące filmy w jego karierze to "Szeregowiec Ryan", "Cast Away" oraz seria "Toy Story". 
+                            Jego zdolność do wcielania się w różnorodne role uczyniła go jednym z najbardziej cenionych aktorów wszech czasów.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/washington.jpg" alt="Denzel Washington">
+                        <p>Denzel Washington zdobył dwa Oscary: za rolę drugoplanową w "Chwale" (1989) i główną rolę w "Dniu próby" (2001). 
+                            Jest znany z odważnych i intensywnych wystąpień w filmach takich jak "Malcolm X", "Huragan" oraz "Lot". 
+                            Washington jest również uznanym reżyserem i producentem.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/lawrence.jpg" alt="Jennifer Lawrence">
+                        <p>Jennifer Lawrence zdobyła Oscara za rolę w "Poradniku pozytywnego myślenia" (2012), co uczyniło ją jedną z najmłodszych laureatek w historii. 
+                            Wkrótce potem zyskała międzynarodową sławę dzięki roli Katniss Everdeen w serii "Igrzyska śmierci". 
+                            Lawrence szybko stała się jedną z najbardziej wpływowych aktorek swojego pokolenia.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/spacey.jpg" alt="Kevin Spacey">
+                        <p>Kevin Spacey zdobył Oscara za role w filmach "Podejrzani" (1995) i "American Beauty" (1999). 
+                            Jego kreacje były znane z intensywności i złożoności postaci. 
+                            Choć jego kariera została przerwana przez kontrowersje, jego wkład w kino jest niekwestionowany.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/bale.jpg" alt="Christian Bale">
+                        <p>Christian Bale zdobył Oscara za rolę w "Fighter" (2010), gdzie zagrał boksera zmagającego się z uzależnieniem. 
+                            Bale jest znany z fizycznych transformacji do swoich ról, takich jak w filmach "Mechanik" czy seria "Mroczny Rycerz". 
+                            Jego zaangażowanie i poświęcenie dla rzemiosła uczyniły go jednym z najlepszych aktorów swojego pokolenia.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/blanchett.jpg" alt="Cate Blanchett">
+                        <p>Cate Blanchett zdobyła dwa Oscary: za "Aviatora" (2004) oraz za "Blue Jasmine" (2013). 
+                            Jest znana z elegancji i subtelności w odgrywaniu złożonych postaci. 
+                            Inne znaczące role to Galadriela w trylogii "Władca Pierścieni" oraz królowa Elżbieta I w filmie "Elizabeth".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/hoffman.jpg" alt="Philip Seymour Hoffman">
+                        <p>Philip Seymour Hoffman zdobył Oscara za rolę w "Capote" (2005), gdzie wcielił się w pisarza Trumana Capote. 
+                            Hoffman był znany z wyjątkowego talentu do wcielania się w postaci pełne emocji i złożoności. 
+                            Jego śmierć w 2014 roku była ogromną stratą dla świata kina.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./assets/actors/portman.jpg" alt="Natalie Portman">
+                        <p>Natalie Portman zdobyła Oscara za rolę baletnicy walczącej z własnymi demonami w "Czarnym łabędziu" (2010). 
+                            Zaczęła swoją karierę w młodym wieku, zdobywając uznanie za filmy takie jak "León zawodowiec". 
+                            Jest również uznaną reżyserką i producentką.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Filmy Oscarowe. Wszelkie prawa zastrzeżone.</p>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('.gallery img').hover(function() {
+                $(this).css('transform', 'scale(1.2)');
+            }, function() {
+                $(this).css('transform', 'scale(1)');
+            });
+    
+            let scale = 1;
+            $('.gallery img').click(function() {
+                scale += 0.1;
+                $(this).css('transform', 'scale(' + scale + ')');
+            });
+        });
+    </script>
+</body>
+</html>
