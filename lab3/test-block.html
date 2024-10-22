@@ -39,6 +39,9 @@
     </div>
 
     <div class="main-content">
+        <p>czerwony - powiększa się przy kliknięciu</p>
+        <p>niebieski - powiększa się po najechaniu i zmniejsza po odjechaniu</p>
+        <p>zielony - powiększa się z każdym kliknięciem</p>
         <div class="color-block block1"></div>
         <div class="color-block block2"></div>
         <div class="color-block block3"></div>
@@ -50,15 +53,17 @@
 
     <script>
         $(document).ready(function() {
-            // Zad 1: Powiększający się po kliknięciu
-            $('.block1').click(function() {
-                $(this).animate({
-                    width: '+=20px',
-                    height: '+=20px'
-                }, 300);
-            });
+            //Zad 1: Powiększa się po kliknięciu (tylko raz)
+        $('.block1').one('click', function() {
+            $(this).animate({
+                width: '+=20px',
+                height: '+=20px'
+            }, 300);
+        });
 
-            // Zad 2: Powiększanie po najechaniu i zmniejszanie po odjechaniu
+
+
+            //Zad 2: Powiększa się po najechaniu i zmniejsza po odjechaniu
             $('.block2').hover(function() {
                 $(this).animate({
                     width: '+=20px',
@@ -71,7 +76,7 @@
                 }, 300);
             });
 
-            // Zad 3: Powiększający się z każdym kliknięciem
+            //Zad 3: Powiększa się z każdym kliknięciem
             let scale = 1;
             $('.block3').click(function() {
                 scale += 0.1;
