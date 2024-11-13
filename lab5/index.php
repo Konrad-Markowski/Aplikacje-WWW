@@ -29,12 +29,12 @@
     <div class="menu">
         <table>
             <tr>
-                <td><a href="index.html">Strona główna</a></td>
-                <td><a href="winners.html">Zwycięzcy</a></td>
-                <td><a href="directors.html">Reżyserzy</a></td>
-                <td><a href="history.html">Historia</a></td>
-                <td><a href="contact.html">Kontakt</a></td>
-                <td><a href="test-block.html">Test block</a></td>
+                <td><a href="./index.html">Strona główna</a></td>
+                <td><a href="./html/winners.html">Zwycięzcy</a></td>
+                <td><a href="./html/directors.html">Reżyserzy</a></td>
+                <td><a href="./html/history.html">Historia</a></td>
+                <td><a href="./html/contact.html">Kontakt</a></td>
+                <td><a href="./html/test-block.html">Test block</a></td>
             </tr>
         </table>
     </div>
