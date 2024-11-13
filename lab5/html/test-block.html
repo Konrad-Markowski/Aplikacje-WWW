@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jQuery</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <button class="sidebar-button" id="sidebarToggle">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <br><br>
+        <h2>Ustawienia koloru</h2>
+        <div class="color-picker">
+            <label for="buttonColor">Kolor:</label><br>
+            <input type="color" id="buttonColor" name="buttonColor" value="#0000ff"><br><br>
+        </div>
+        <button id="resetColor">Przywróć oryginalny kolor</button>
+    </div>
+
+    <div class="header">
+        <h1>Testowa strona z jQuery</h1>
+    </div>
+
+    <div class="menu">
+        <table>
+            <tr>
+                <td><a href="../index.html">Strona główna</a></td>
+                <td><a href="./winners.html">Zwycięzcy</a></td>
+                <td><a href="./directors.html">Reżyserzy</a></td>
+                <td><a href="./history.html">Historia</a></td>
+                <td><a href="./contact.html">Kontakt</a></td>
+                <td><a href="./test-block.html">Test block</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="main-content">
+        <p>czerwony - powiększa się przy kliknięciu</p>
+        <p>niebieski - powiększa się po najechaniu i zmniejsza po odjechaniu</p>
+        <p>zielony - powiększa się z każdym kliknięciem</p>
+        <div class="color-block block1"></div>
+        <div class="color-block block2"></div>
+        <div class="color-block block3"></div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Filmy Oscarowe. Wszelkie prawa zastrzeżone.</p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            //Zad 1: Powiększa się po kliknięciu (tylko raz)
+        $('.block1').one('click', function() {
+            $(this).animate({
+                width: '+=20px',
+                height: '+=20px'
+            }, 300);
+        });
+
+
+
+            //Zad 2: Powiększa się po najechaniu i zmniejsza po odjechaniu
+            $('.block2').hover(function() {
+                $(this).animate({
+                    width: '+=20px',
+                    height: '+=20px'
+                }, 300);
+            }, function() {
+                $(this).animate({
+                    width: '-=20px',
+                    height: '-=20px'
+                }, 300);
+            });
+
+            //Zad 3: Powiększa się z każdym kliknięciem
+            let scale = 1;
+            $('.block3').click(function() {
+                scale += 0.1;
+                $(this).css('transform', 'scale(' + scale + ')');
+            });
+        });
+    </script>
+</body>
+</html>
