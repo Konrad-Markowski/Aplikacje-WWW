@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oscary - Strona Główna</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
@@ -27,17 +27,19 @@
     </div>
 
     <div class="menu">
-        <table>
-            <tr>
-                <td><a href="./index.html">Strona główna</a></td>
-                <td><a href="./html/winners.html">Zwycięzcy</a></td>
-                <td><a href="./html/directors.html">Reżyserzy</a></td>
-                <td><a href="./html/history.html">Historia</a></td>
-                <td><a href="./html/contact.html">Kontakt</a></td>
-                <td><a href="./html/test-block.html">Test block</a></td>
-            </tr>
-        </table>
-    </div>
+    <table>
+        <tr>
+            <td><a href="./index.php">Strona główna</a></td>
+            <td><a href="./showpage.php?id=1">Zwycięzcy</a></td>
+            <td><a href="./showpage.php?id=2">Reżyserzy</a></td>
+            <td><a href="./showpage.php?id=3">Historia</a></td>
+            <td><a href="./showpage.php?id=4">Kontakt</a></td>
+            <td><a href="./showpage.php?id=5">Test block</a></td>
+        </tr>
+    </table>
+</div>
+
+
 
     <div class="main-content">
         <h2 id="clock"></h2>
@@ -47,7 +49,7 @@
         
         <h2>Historia Oscarów</h2>
         <p>
-            <img id="oscar-award" src="./assets/other/oscar-award-transparent.png" alt="Oscar Award">
+            <img id="oscar-award" src="./im/other/oscar-award-transparent.png" alt="Oscar Award">
             Nagroda Akademii Filmowej, znana jako Oscar, to prestiżowe wyróżnienie przyznawane corocznie przez Amerykańską Akademię Sztuki i Wiedzy Filmowej. Pierwsza ceremonia odbyła się 16 maja 1929 roku.
             Nagrody przyznawane są filmom, które były wyświetlane w amerykańskich kinach w poprzednim roku kalendarzowym. 
             Uroczystość wręczenia Oscarów odbywa się zazwyczaj wczesną wiosną, a większość wyróżnień trafia do filmów anglojęzycznych. 

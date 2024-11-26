@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: url('./assets/other/background.jpg') no-repeat center center fixed;
+    background: url('../img/other/background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
     line-height: 1.6;
