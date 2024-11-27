@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test jQuery</title>
+    <title>Testowa strona</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -25,25 +24,8 @@
         <h1>Testowa strona z jQuery</h1>
     </div>
 
-    <div class="menu">
-        <table>
-            <tr>
-                <td><a href="../index.php">Strona główna</a></td>
-                <td><a href="../showpage.php?id=1">Zwycięzcy</a></td>
-                <td><a href="./showpage.php?id=2">Reżyserzy</a></td>
-                <td><a href="./showpage.php?id=3">Historia</a></td>
-                <td><a href="./showpage.php?id=4">Kontakt</a></td>
-                <td><a href="./showpage.php?id=5">Test block</a></td>
-            </tr>
-        </table>
-    </div>
-   
-    
-
     <div class="main-content">
-        <p>czerwony - powiększa się przy kliknięciu</p>
-        <p>niebieski - powiększa się po najechaniu i zmniejsza po odjechaniu</p>
-        <p>zielony - powiększa się z każdym kliknięciem</p>
+        <h2>Test interaktywnych elementów</h2>
         <div class="color-block block1"></div>
         <div class="color-block block2"></div>
         <div class="color-block block3"></div>
@@ -53,19 +35,18 @@
         <p>&copy; 2024 Filmy Oscarowe. Wszelkie prawa zastrzeżone.</p>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            //Zad 1: Powiększa się po kliknięciu (tylko raz)
-        $('.block1').one('click', function() {
-            $(this).animate({
-                width: '+=20px',
-                height: '+=20px'
-            }, 300);
-        });
+            // Zad 1: Powiększa się po kliknięciu (tylko raz)
+            $('.block1').one('click', function() {
+                $(this).animate({
+                    width: '+=20px',
+                    height: '+=20px'
+                }, 300);
+            });
 
-
-
-            //Zad 2: Powiększa się po najechaniu i zmniejsza po odjechaniu
+            // Zad 2: Powiększa się po najechaniu i zmniejsza po odjechaniu
             $('.block2').hover(function() {
                 $(this).animate({
                     width: '+=20px',
@@ -78,7 +59,7 @@
                 }, 300);
             });
 
-            //Zad 3: Powiększa się z każdym kliknięciem
+            // Zad 3: Powiększa się z każdym kliknięciem
             let scale = 1;
             $('.block3').click(function() {
                 scale += 0.1;

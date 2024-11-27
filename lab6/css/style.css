@@ -1,3 +1,4 @@
+/* Resetowanie marginesów i paddingu, oraz ustawienie box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: 'Arial', sans-serif;
 }
 
+/* Ustawienia dla html i body */
 html, body {
     height: 100%;
 }
@@ -19,6 +21,7 @@ body {
     line-height: 1.6;
 }
 
+/* Nagłówek strony */
 .header {
     background: rgba(57, 153, 153, 0.85);
     text-align: center;
@@ -26,34 +29,48 @@ body {
     color: white;
 }
 
+/* Stylizacja tytułu w nagłówku */
 .header h1 {
     font-size: 3em;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
 }
 
+/* Stylizacja menu */
 .menu {
     background-color: rgba(192, 192, 192, 0.9);
-    padding: 10px 0;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-.menu > table {
-    border-spacing: 20px;
-    margin: auto;
-}
-
+/* Linki w menu */
 .menu a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    padding: 10px 20px;
-    transition: color 0.3s ease;
+    padding: 15px 20px;
+    margin: 0 10px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
+/* Efekt najechania na linki w menu */
 .menu a:hover {
-    color: rgba(57, 153, 153);
+    background-color: #399;
+    color: white;
+    transform: scale(1.05);
 }
 
+/* Aktywny link w menu */
+.menu > .active {
+    background-color: #399;
+    color: white;
+}
+
+/* Główna zawartość strony */
 .main-content {
     background-color: rgba(255, 255, 255, 0.8);
     max-width: 1200px;
@@ -65,6 +82,7 @@ body {
     flex-grow: 1;
 }
 
+/* Stylizacja obrazu nagrody Oscara */
 #oscar-award {
     height: 200px;
     width: 150px;
@@ -73,6 +91,7 @@ body {
     display: block;
 }
 
+/* Obrazy w głównej zawartości */
 .main-content img {
     float: left;
     margin-right: 20px;
@@ -81,11 +100,13 @@ body {
     border-radius: 10px;
 }
 
+/* Nagłówki w głównej zawartości */
 .main-content h1, .main-content h2 {
     color: #399;
     margin-bottom: 15px;
 }
 
+/* Lista punktowana w głównej zawartości */
 .main-content ul {
     margin-left: 20px;
     padding-left: 10px;
@@ -96,10 +117,12 @@ body {
     margin-bottom: 10px;
 }
 
+/* Akapit w głównej zawartości */
 .main-content p {
     text-align: justify;
 }
 
+/* Przycisk do otwierania menu bocznego */
 .sidebar-button {
     position: fixed;
     top: 20px;
@@ -113,6 +136,7 @@ body {
     z-index: 1001;
 }
 
+/* Menu boczne */
 .sidebar {
     height: 100%;
     width: 250px;
@@ -131,6 +155,7 @@ body {
     padding-left: 20px;
 }
 
+/* Przycisk w menu bocznym */
 .sidebar button {
     display: block;
     margin: 10px auto;
@@ -143,18 +168,34 @@ body {
     width: 80%;
 }
 
+/* Efekt najechania na przycisk w menu bocznym */
 .sidebar button:hover {
     background-color: #666;
 }
 
+/* Kategoria wyboru koloru */
 .color-picker {
     margin: 20px;
 }
 
+/* Styl nagłówków w stopce */
 .header, .footer {
     transition: background-color 0.5s ease;
 }
 
+/* Stopka */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(57, 153, 153, 0.85);
+    color: white;
+    font-size: 0.9em;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Formularz */
 .form-container {
     background-color: rgba(255, 255, 255, 0.9);
     max-width: 600px;
@@ -165,6 +206,7 @@ body {
     font-size: 1.1em;
 }
 
+/* Etykiety formularza */
 .form-container label {
     display: block;
     margin-bottom: 10px;
@@ -172,6 +214,7 @@ body {
     color: #399;
 }
 
+/* Pola formularza */
 .form-container input[type="text"], 
 .form-container input[type="email"],
 .form-container textarea {
@@ -183,11 +226,13 @@ body {
     font-size: 1em;
 }
 
+/* Tekstowe pole formularza */
 .form-container textarea {
     height: 150px;
     resize: vertical;
 }
 
+/* Przycisk wyślij formularza */
 .form-container input[type="submit"] {
     background-color: #399;
     color: white;
@@ -199,10 +244,12 @@ body {
     transition: background-color 0.3s ease;
 }
 
+/* Efekt najechania na przycisk formularza */
 .form-container input[type="submit"]:hover {
     background-color: #288;
 }
 
+/* Galeria zdjęć */
 .gallery {
     padding: 5px;
 }
@@ -218,6 +265,7 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
+/* Bloki kolorów */
 .color-block {
     width: 100px;
     height: 100px;
@@ -234,19 +282,8 @@ body {
     background-color: green;
 }
 
-
+/* "Easter egg" link */
 #easter-egg {
     text-decoration: none;
     color: black;
-}
-
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: rgba(57, 153, 153, 0.85);
-    color: white;
-    font-size: 0.9em;
-    width: 100%;
-    position: relative;
-    bottom: 0;
 }

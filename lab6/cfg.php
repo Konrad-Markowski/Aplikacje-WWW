@@ -1,11 +1,16 @@
 <?php
-$host = 'localhost';
-$dbname = 'moja_strona';
-$user = 'root';
-$password = '';
-$conn = new mysqli($host, $user, $password, $dbname);
+$dbhost = "localhost";
+$dbuser = "root"; 
+$dbpass = ""; 
+$baza = "moja_strona";
 
-if ($conn->connect_error) {
-    die("Błąd połączenia z bazą danych: " . $conn->connect_error);
+
+$link = mysqli_connect($dbhost, $dbuser, $dbpass, $baza);
+
+
+if (!$link) {
+    die('<b>Przerwane połączenie: </b>' . mysqli_connect_error());
+} else {
+    echo '<b>Połączono z bazą danych.</b>';
 }
 ?>
