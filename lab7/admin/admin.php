@@ -1,7 +1,6 @@
 <?php
 include 'cfg.php';
 
-// Metoda: FormularzLogowania
 function FormularzLogowania($error = '') {
     echo "<form method='post' action=''>
         <h3>Logowanie</h3>
@@ -12,7 +11,6 @@ function FormularzLogowania($error = '') {
     </form>";
 }
 
-// Logika logowania
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['username'] === $GLOBALS['login'] && $_POST['password'] === $GLOBALS['pass']) {
         $_SESSION['loggedin'] = true;
@@ -22,13 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Sprawdzenie dostępu
 if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
     FormularzLogowania();
     exit;
 }
 
-// Metoda: ListaPodstron
 function ListaPodstron() {
     $conn = new mysqli("localhost", "root", "", "cms");
     $result = $conn->query("SELECT id, tytul FROM podstrony");
@@ -48,7 +44,6 @@ function ListaPodstron() {
     echo "</table>";
 }
 
-// Metoda: EdytujPodstrone
 function EdytujPodstrone($id) {
     $conn = new mysqli("localhost", "root", "", "cms");
     $result = $conn->query("SELECT * FROM podstrony WHERE id=$id LIMIT 1");
@@ -61,7 +56,6 @@ function EdytujPodstrone($id) {
     </form>";
 }
 
-// Metoda: DodajNowaPodstrone
 function DodajNowaPodstrone() {
     echo "<form method='post'>
         <input type='text' name='title' placeholder='Tytuł'><br>
@@ -71,14 +65,12 @@ function DodajNowaPodstrone() {
     </form>";
 }
 
-// Metoda: UsunPodstrone
 function UsunPodstrone($id) {
     $conn = new mysqli("localhost", "root", "", "cms");
     $conn->query("DELETE FROM podstrony WHERE id=$id LIMIT 1");
     echo "Podstrona została usunięta.";
 }
 
-// Obsługa akcji
 if (isset($_GET['delete'])) {
     UsunPodstrone($_GET['delete']);
 }
