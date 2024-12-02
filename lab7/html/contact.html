@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <button class="sidebar-button" id="sidebarToggle">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <br><br>
+        <h2>Ustawienia koloru</h2>
+        <div class="color-picker">
+            <label for="buttonColor">Kolor:</label><br>
+            <input type="color" id="buttonColor" name="buttonColor" value="#0000ff"><br><br>
+        </div>
+        <button id="resetColor">Przywróć oryginalny kolor</button>
+    </div>
+
+    <div class="header">
+        <h1>Kontakt</h1>
+    </div>
+
+    <div class="main-content">
+        <h2>Formularz kontaktowy</h2>
+        <div class="form-container">
+            <form action="mailto:k.markowski2002@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Imię:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="subject">Temat:</label><br>
+                <input type="text" id="subject" name="subject"><br><br>
+
+                <label for="message">Wiadomość:</label><br>
+                <textarea id="message" name="message" rows="6" cols="50"></textarea><br><br>
+
+                <input type="submit" value="Wyślij">
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Filmy Oscarowe. Wszelkie prawa zastrzeżone.</p>
+    </div>
+</body>
+</html>
