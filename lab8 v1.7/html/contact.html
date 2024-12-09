@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <button class="sidebar-button" id="sidebarToggle">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <br><br>
+        <h2>Ustawienia koloru</h2>
+        <div class="color-picker">
+            <label for="buttonColor">Kolor:</label><br>
+            <input type="color" id="buttonColor" name="buttonColor" value="#0000ff"><br><br>
+        </div>
+        <button id="resetColor">Przywróć oryginalny kolor</button>
+    </div>
+
+    <div class="header">
+        <h1>Kontakt</h1>
+    </div>
+
+    <div class="main-content">
+        <h2>Formularz kontaktowy</h2>
+        <div class="form-container">
+            <form action="contact.php" method="post">
+                <label for="temat">Temat:</label><br>
+                <input type="text" id="temat" name="temat" required><br><br>
+
+                <label for="tresc">Treść:</label><br>
+                <textarea id="tresc" name="tresc" required></textarea><br><br>
+
+                <label for="email">Twój Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <button type="submit" name="submit">Wyślij</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Filmy Oscarowe. Wszelkie prawa zastrzeżone.</p>
+    </div>
+</body>
+</html>
