@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj Kategorię</title>
+</head>
+<body>
+    <h1>Dodaj Kategorię</h1>
+    <form action="categories.php" method="POST">
+        <label for="nazwa">Nazwa kategorii:</label>
+        <input type="text" id="nazwa" name="nazwa" required><br><br>
+        
+        <label for="matka">ID kategorii nadrzędnej (0 dla głównej):</label>
+        <input type="number" id="matka" name="matka" value="0"><br><br>
+        
+        <button type="submit">Dodaj kategorię</button>
+    </form>
+</body>
+</html>

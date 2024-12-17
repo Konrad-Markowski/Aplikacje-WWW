@@ -5,7 +5,7 @@ $login = "admin";
 $pass = "1234";
 
 function FormularzLogowania() {
-    $Sznyrik = "
+    $formularz = "
     <div class='logowanie'>
         <h1 class='heading'>Panel CMS:</h1>
         <div class='logowanie'>
@@ -18,7 +18,7 @@ function FormularzLogowania() {
             </form>
         </div>
     </div>";
-    return $Sznyrik;
+    return $formularz;
 }
 
 function ListaPodstron() {

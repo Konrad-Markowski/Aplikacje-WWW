@@ -1,142 +1,130 @@
-// Insert default categories if table is empty
-$result = $conn->query("SELECT COUNT(*) as count FROM categories");
-$row = $result->fetch_assoc();
-if ($row['count'] == 0) {
-    $defaultCategories = [
-        ['name' => 'Electronics', 'parent_id' => 0],
-        ['name' => 'Computers', 'parent_id' => 1],
-        ['name' => 'Laptops', 'parent_id' => 2],
-        ['name' => 'Smartphones', 'parent_id' => 1],
-        ['name' => 'Home Appliances', 'parent_id' => 0],
-        ['name' => 'Kitchen', 'parent_id' => 5],
-        ['name' => 'Living Room', 'parent_id' => 5]
-    ];
-
-    foreach ($defaultCategories as $category) {
-        $stmt = $conn->prepare("INSERT INTO categories (name, parent_id) VALUES (?, ?)");
-        $stmt->bind_param("si", $category['name'], $category['parent_id']);
-        $stmt->execute();
-        $stmt->close();
-    }
-}
-
-// Database connection
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "shop";
 
+// Połączenie z bazą danych
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Sprawdzenie połączenia
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: {$conn->connect_error}");
 }
 
-// Create categories table
-$sql = "CREATE TABLE IF NOT EXISTS categories (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    parent_id INT DEFAULT 0,
-    name VARCHAR(255) NOT NULL
-)";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Table categories created successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-// Function to add category
-function addCategory($name, $parent_id = 0) {
+// Tworzenie tabeli, jeśli nie istnieje
+function TworzKategorieTable() {
     global $conn;
-    $stmt = $conn->prepare("INSERT INTO categories (name, parent_id) VALUES (?, ?)");
-    $stmt->bind_param("si", $name, $parent_id);
+
+    // Sprawdzenie, czy tabela istnieje
+    $result = $conn->query("SHOW TABLES LIKE 'categories'");
+    if ($result && $result->num_rows == 0) {
+        $sql = "CREATE TABLE categories (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            matka INT(6) DEFAULT 0,
+            nazwa VARCHAR(255) NOT NULL
+        )";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Table 'categories' created successfully.<br>";
+        } else {
+            echo "Error creating table: {$conn->error}<br>";
+        }
+    }
+}
+
+// Funkcja dodawania kategorii
+function DodajKategorie($nazwa, $matka = 0) {
+    global $conn;
+
+    // Sprawdzenie, czy kategoria już istnieje
+    $stmt = $conn->prepare("SELECT id FROM categories WHERE nazwa = ? AND matka = ?");
+    $stmt->bind_param("si", $nazwa, $matka);
     $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        echo "Category '$nazwa' already exists.<br>";
+        $stmt->close();
+        return;
+    }
+
+    $stmt->close();
+
+    // Dodanie nowej kategorii
+    $stmt = $conn->prepare("INSERT INTO categories (nazwa, matka) VALUES (?, ?)");
+    $stmt->bind_param("si", $nazwa, $matka);
+
+    if ($stmt->execute()) {
+        echo "Category '$nazwa' added successfully.<br>";
+    } else {
+        echo "Error adding category: {$conn->error}<br>";
+    }
+
     $stmt->close();
 }
 
-// Function to delete category
-function deleteCategory($id) {
+// Funkcja wyświetlania kategorii w strukturze hierarchicznej
+function PokazKategorie($matka = 0) {
     global $conn;
-    $stmt = $conn->prepare("DELETE FROM categories WHERE id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $stmt->close();
-}
 
-// Function to edit category
-function editCategory($id, $name, $parent_id = 0) {
-    global $conn;
-    $stmt = $conn->prepare("UPDATE categories SET name = ?, parent_id = ? WHERE id = ?");
-    $stmt->bind_param("sii", $name, $parent_id, $id);
-    $stmt->execute();
-    $stmt->close();
-}
-
-// Function to display categories
-function showCategories($parent_id = 0, $level = 0) {
-    global $conn;
-    $stmt = $conn->prepare("SELECT id, name FROM categories WHERE parent_id = ?");
-    $stmt->bind_param("i", $parent_id);
+    // Pobranie kategorii, które mają daną kategorię nadrzędną
+    $stmt = $conn->prepare("SELECT id, nazwa FROM categories WHERE matka = ? ORDER BY nazwa");
+    $stmt->bind_param("i", $matka);
     $stmt->execute();
     $result = $stmt->get_result();
+
+    // Iteracja po kategoriach na danym poziomie
     while ($row = $result->fetch_assoc()) {
-        echo str_repeat("--", $level) . $row['name'] . "<br>";
-        showCategories($row['id'], $level + 1);
+        // Wyświetlenie kategorii
+        echo "<strong>" . htmlspecialchars($row['nazwa']) . "</strong><br>";
+
+        // Rekurencyjne wyświetlanie dzieci tej kategorii
+        PokazKategorie($row['id']);
     }
+
     $stmt->close();
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add'])) {
-    $name = $_POST['name'];
-    $parent_id = $_POST['parent_id'];
-    addCategory($name, $parent_id);
+// Tworzenie tabeli, jeśli nie istnieje
+TworzKategorieTable();
+
+// Obsługa formularza
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nazwa = $_POST['nazwa'] ?? '';
+    $matka = $_POST['matka'] ?? 0;
+
+    if (!empty($nazwa)) {
+        DodajKategorie($nazwa, (int)$matka);
+    } else {
+        echo "Category name is required.<br>";
+    }
 }
-
-// Function to delete all categories
-function deleteAllCategories() {
-    global $conn;
-    $stmt = $conn->prepare("DELETE FROM categories");
-    $stmt->execute();
-    $stmt->close();
-}
-
-// Delete all categories to avoid duplicates on refresh
-deleteAllCategories();
-
 ?>
-<?php
-$conn->close();
-?>
-
 
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <title>Categories</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj Kategorię</title>
 </head>
 <body>
-    <h1>Categories</h1>
-    <form method="post" action="">
-        <label for="name">Category Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="parent_id">Parent ID:</label>
-        <input type="number" id="parent_id" name="parent_id" value="0">
-        <button type="submit" name="add">Add Category</button>
+    <h1>Dodaj Kategorię</h1>
+    <form action="" method="POST">
+        <label for="nazwa">Nazwa kategorii:</label>
+        <input type="text" id="nazwa" name="nazwa" required><br><br>
+        
+        <label for="matka">ID kategorii nadrzędnej (0 dla głównej):</label>
+        <input type="number" id="matka" name="matka" value="0"><br><br>
+        
+        <button type="submit">Dodaj kategorię</button>
     </form>
 
-    <h2>Category List</h2>
+    <h2>Struktura kategorii</h2>
     <?php
-    showCategories();
+    // Wyświetlanie struktury kategorii
+    PokazKategorie();
     ?>
 </body>
 </html>
-// Function to delete all categories
-function deleteAllCategories() {
-    global $conn;
-    $stmt = $conn->prepare("DELETE FROM categories");
-    $stmt->execute();
-    $stmt->close();
-}
-
-// Delete all categories to avoid duplicates on refresh
-deleteAllCategories();
